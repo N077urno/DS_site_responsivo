@@ -1,0 +1,246 @@
+@charset "UTF-8";
+
+.logo{
+  width: 30px;
+  height: 30px;
+}
+
+ul{
+  list-style-type: none;
+}
+
+header{
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  display: flex;          /* transforma os elementos do header num flexbox */
+  justify-content: center;
+  align-items: center;
+  background-color: #246b5b;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0; 
+}
+
+p{
+  text-align: justify;
+}
+
+/* Estilos do menu de navegação */
+nav {
+  color: #fff;
+  padding: 5px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;                      /*A propriedade gap define tanto o espaçamento 
+                                  vertical quanto o espaçamento horizontal entre 
+                                  os elementos. A propriedade gap é uma forma 
+                                  abreviada para definir row-gap (espaçamento vertical)
+                                   e column-gap (espaçamento horizontal). 
+                                   Por exemplo, gap: 10px 20px; define um espaçamento 
+                                   de 10 pixels na direção vertical e 20 pixels na 
+                                   direção horizontal.*/
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Layout em Grade */
+.grid-container {
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* Está definindo o Grid com 3 colunas, sendo 1a 
+                                        e a 3a de largura automática de acordo com os 
+                                        elementos presentes nelas e a 2a coluna (a do meio)
+                                        com a fração restante do espaço disponível */  
+  
+  grid-gap: 20px;                       /* define o tamanho do espaço vazio (espaçamento) 
+                                        entre as células da grade, tanto na direção horizontal
+                                        (espaçamento entre colunas) quanto na direção vertical
+                                         (espaçamento entre linhas).*/
+  
+}
+
+/* Estilos da coluna do Aside Esquerdo */
+.left-aside {
+  margin-top: 20px;
+  background-color: #ebebeb;
+  padding: 5px;
+  
+  
+  display: flex;          /* mostrar os elementos como flexbox */
+
+  flex-direction: column;     /* é usada para definir a direção de fluxo dos itens dentro
+                              de um contêiner flexível. Ao definir essa propriedade como
+                              column, os itens são dispostos verticalmente, um abaixo do
+                              outro, em uma coluna. */
+
+  align-items: center;      /* alinhar os elementos aos centro dentro de conteiner
+                            flex */
+  justify-content: center;  /* alinhar os elementos aos centro dentro de conteiner
+                            flex */ 
+  
+
+}
+
+.left-aside ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.left-aside li {
+  margin-bottom: 10px;
+}
+
+.left-aside .lojas {
+  margin-bottom: 10px;
+  width: 100%;            /* tamanho das imagens 100% do seu tamanho real */
+  height: 100%;
+  
+}
+
+/* Estilos da seção principal */
+.main-section {
+  
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+  
+}
+
+/* Estilos da coluna do Aside Direito */
+.right-aside {
+  margin-top: 20px;
+  background-color: #ebebeb;
+  padding: 20px;
+ 
+}
+
+
+.right-aside ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.right-aside li {
+  margin-bottom: 10px;
+}
+
+/* Estilos do rodapé */
+footer {
+  
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+.roda_pe{
+  text-align: center;
+}
+
+.tab1{
+  border: 1px solid #606060;
+  border-spacing: 0px;
+  margin: auto;
+  padding: 50px;
+}
+
+.tab1 td{
+  border: 1px solid #606060;
+  padding: 10px;
+}
+
+input[type="text"]{     /*Tamanho dos campos de texto */
+  width: 200px;
+}
+/*
+input[type="password"]{
+
+  width:300px;
+}*/
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+                                /* modifica o formato do grid */
+  .grid-container {
+    grid-template-columns: 1fr; /* Altera para uma única coluna */
+    grid-gap: 10px; /* Reduz o espaçamento entre as seções */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-aside{
+    margin-top: 10px; /* Reduz a margem superior do aside */
+    order: 2;
+  }
+
+  .left-aside .lojas {
+    width: 100%; /* Ajusta a largura das imagens para ocupar toda a largura do aside */
+    
+  }
+
+  .logo{
+  width: 20px;
+  height: 20px;
+}
+
+  .right-aside {
+    order: 3;
+    margin-top: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;      /*modifica a direção dos ícones, agora eles vão ficar em 
+                              linha ao invés de coluna */
+    justify-content: center; */
+  }
+
+  .right-aside ul{
+    display: flex;
+    flex-wrap: nowrap;        /*A propriedade flex-wrap determina se os itens flexíveis
+                               devem ser ajustados em várias linhas ou se devem permanecer
+                               em uma única linha. O valor nowrap indica que os itens não 
+                               devem quebrar para uma nova linha e devem permanecer em uma 
+                               única linha, mesmo que o espaço seja insuficiente.*/
+    width: 100%;
+    justify-content: center;
+
+  }
+
+  .right-aside li{
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    margin-bottom: 5px;
+  }
+
+  .right-aside li img{
+    width: 100%;
+    height: 100%;
+  }
+
+  input[type="text"]{       
+    width: 100%;        /* Define o tamanho do campo de texto como sendo toda a largura
+                            disponível na tela */
+    
+    max-width: 200px;   /* Limita o tamanho do campo em 200px*/
+  }
+
+  textarea{
+    width: 100%;        /* Define o tamanho do campo de texto como sendo toda a largura
+                            disponível na tela */
+    height: 200px;
+  }
+
+}
+
